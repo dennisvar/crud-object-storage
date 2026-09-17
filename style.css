@@ -1,0 +1,46 @@
+.inventory_form {
+  border: 1px solid black;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  width: max-content;
+  gap: 3px;
+  box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
+  background-color: #f5eedd;
+}
+
+.inventory_form label {
+  font-family: verdana, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.5
+}
+
+.inventory_form input {
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.inventory_form .create.btn {
+  grid-column: -1 / 1;
+  place-self: center;
+}
+
+.btn {
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0px 2px 1px;
+  font-weight: bold;
+}
+
+.create {
+  background-color: hsl(75, 65%, 48%);
+}
+.create:hover {
+  background-color: hsl(75, 65%, 53%);
+}
+.create:active {
+  background-color: hsl(75, 65%, 43%);
+}
