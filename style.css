@@ -2,11 +2,21 @@
   border: 1px solid black;
   padding: 5px;
   display: grid;
+  /* max-content expands the element to the largest size needed to display it's 
+  content. min-content would shrink the element to the smallest possible size. 
+  min-content forces text to wrap and max-content forces content onto a
+  single line and wide as possible. */
   grid-template-columns: max-content max-content;
   width: max-content;
   gap: 3px;
-  box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
+  /* h-offset v-offset blur spread color */
+  /* Offsets put the shadow on the right, left, top or bottom and a 0 value
+  on both puts it directely behind the element. The blur blurs the shadow, and
+  the spread increases the size of the shadow. */
+  /* red green blue alpha */
+  box-shadow: 0px 0px 2px 0.5px rgba(0, 0, 0, 0.3);
   background-color: #f5eedd;
+  border-radius: 3px;
 }
 
 .inventory_form label {
@@ -22,7 +32,14 @@
 }
 
 .inventory_form .create.btn {
+  /* grid-column is shorthand for grid-column-start and grid-column-end. It 
+  specifies the starting and ending vertical lines the element sits between.
+  grid-column-end: -1 specifies that the grid item should extend to the end of 
+  the grid */
   grid-column: -1 / 1;
+  /* place-self is shorthand for align-self and justify-self. It lets you align
+  an item vertically and horizontally. justify-self is like text-align, but it
+  works on elements and text. */
   place-self: center;
 }
 
@@ -44,3 +61,30 @@
 .create:active {
   background-color: hsl(75, 65%, 43%);
 }
+
+.inventory_table {
+  /* hue saturation lightness alpha */
+  box-shadow: 0px 0px 2px 0.5px hsla(0, 0%, 0%, 0.3);
+  border-radius: 3px;
+}
+
+.inventory_table th, .inventory_table td {
+  border: none;
+  font-family: verdana, sans-serif;
+  font-size: 11px;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+
+.inventory_table th {
+  background-color: #757575;
+  color: #FAFAFA;
+}
+
+.inventory_table tr:nth-child(odd) {
+  background-color: #F5F5F5;
+}
+.inventory_table tr:nth-child(even) {
+  background-color: #EEEEEE;
+}
+
