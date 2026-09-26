@@ -62,10 +62,53 @@
   background-color: hsl(75, 65%, 43%);
 }
 
+.read {
+  background-color: hsl(186, 60%, 49%);
+}
+.read:hover {
+  background-color: hsl(186, 60%, 54%);
+}
+.read:active {
+  background-color: hsl(186, 60%, 44%);
+}
+
+.update {
+  background-color: hsl(32, 100%, 66%);
+}
+.update:hover {
+  background-color: hsl(32, 100%, 71%);
+}
+.update:active {
+  background-color: hsl(32, 100%, 61%);
+}
+
+.delete {
+  background-color: hsl(0, 100%, 69%);
+}
+.delete:hover {
+  background-color: hsl(0, 100%, 74%);
+}
+.delete:active {
+  background-color: hsl(0, 100%, 64%);
+}
+
+.action_buttons {
+  display: flex;
+  padding: 1px 0px;
+  gap: 1px;
+  text-transform: uppercase;
+}
+
+.action_buttons button {
+  font-size: 9px;
+
+}
+
 .inventory_table {
   /* hue saturation lightness alpha */
   box-shadow: 0px 0px 2px 0.5px hsla(0, 0%, 0%, 0.3);
   border-radius: 3px;
+  border: 1px solid black;
 }
 
 .inventory_table th, .inventory_table td {

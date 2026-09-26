@@ -1,0 +1,59 @@
+let $ = sel => document.querySelector(sel)
+let h = tag => document.createElement(tag)
+
+let items = {}
+let count = 1
+
+$('.create.btn').onclick = () => {
+  let name = $('.name_input').value
+  let price = $('.price_input').value
+  let stock = $('.stock_input').value
+  
+  addRow(name, price, stock)
+}
+
+function addRow(name, price, stock) {
+  let id = count++
+  items[id] = {
+    'name': name,
+    'price': price,
+    'stock': stock
+  }
+
+  let row = h('tr')
+  // FIX: Destructuring assignment requires an iterable(array, string, maps,- 
+  // -sets, nodelists).
+  // let name_cell, price_cell, stock_cell = h('td')
+  
+  // BUG: Uncaught TypeError: Cannot set properties of undefined- 
+  // -(setting 'textContent').
+
+  let name_cell = h('td')
+  let price_cell = h('td')
+  let stock_cell = h('td')
+  let action_cell = h('td')
+
+  name_cell.textContent = name
+  price_cell.textContent = price
+  stock_cell.textContent = stock
+
+  let read_btn = h('button')
+  read_btn.textContent = 'read'
+  read_btn.classList.add('read', 'btn')
+  let update_btn = h('button')
+  update_btn.textContent = 'update'
+  update_btn.classList.add('update', 'btn')
+  let delete_btn = h('button')
+  delete_btn.textContent = 'delete'
+  delete_btn.classList.add('delete', 'btn')
+
+  let action_buttons = h('div')
+  action_buttons.classList.add('action_buttons')
+  action_buttons.append(read_btn, update_btn, delete_btn)
+
+  action_cell.append(action_buttons)
+
+  row.append(name_cell, price_cell, stock_cell, action_cell)
+
+  $('.inventory_table').append(row)
+}

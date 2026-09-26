@@ -6,9 +6,9 @@
   </head>
   <body>
     <form class="inventory_form">
-      <label>Name:</label><input>
-      <label>Price:</label><input>
-      <label>Stock:</label><input>
+      <label>Name:</label><input class="name_input">
+      <label>Price:</label><input class="price_input">
+      <label>Stock:</label><input class="stock_input">
       <button type="button" class="create btn">create</button>
     </form>
     <br>
@@ -17,24 +17,46 @@
         <th>Name</th>
         <th>Price</th>
         <th>Stock</th>
+        <th>Action</th>
       </tr>
       <tr>
         <td>lamp</td>
         <td>$22.09</td>
         <td>5</td>
+        <td>
+          <div class="action_buttons">
+            <button class="read btn">read</button>
+            <button class="update btn">update</button>
+            <button class="delete btn">delete</button>
+          </div>
+        </td>
       </tr>
       <tr>
         <td>mug</td>
         <td>$4.97</td>
         <td>10</td>
+        <td>
+          <div class="action_buttons">
+            <button class="read btn">read</button>
+            <button class="update btn">update</button>
+            <button class="delete btn">delete</button>
+          </div>
+        </td>
       </tr>
       <tr>
         <td>earphones</td>
         <td>$16.50</td>
         <td>25</td>
+        <td>
+          <div class="action_buttons">
+            <button class="read btn">read</button>
+            <button class="update btn">update</button>
+            <button class="delete btn">delete</button>
+          </div>
+        </td>
       </tr>
     </table>
-    <script src="app.css"></script>
+    <script src="app.js"></script>
   </body>
 </html>
 
