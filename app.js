@@ -12,6 +12,11 @@ $('.create.btn').onclick = () => {
   addRow(name, price, stock)
 }
 
+
+$('.clear.btn').onclick = () => {
+  $('.inventory_form').reset()
+}
+
 function addRow(name, price, stock) {
   let id = count++
   items[id] = {

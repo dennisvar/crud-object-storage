@@ -31,7 +31,7 @@
   font-size: 11px;
 }
 
-.inventory_form .create.btn {
+.inventory_form div {
   /* grid-column is shorthand for grid-column-start and grid-column-end. It 
   specifies the starting and ending vertical lines the element sits between.
   grid-column-end: -1 specifies that the grid item should extend to the end of 
@@ -90,6 +90,16 @@
 }
 .delete:active {
   background-color: hsl(0, 100%, 64%);
+}
+
+.clear {
+  background-color: hsl(184, 9%, 62%);
+}
+.clear:hover {
+  background-color: hsl(184, 9%, 68%);
+}
+.clear:active {
+  background-color: hsl(184, 9%, 56%);
 }
 
 .action_buttons {
