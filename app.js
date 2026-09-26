@@ -14,6 +14,8 @@ $('.create.btn').onclick = () => {
 
 
 $('.clear.btn').onclick = () => {
+  // reset() is a built-in method that restories form fields to their 
+  // initial/default values.
   $('.inventory_form').reset()
 }
 
@@ -59,6 +61,28 @@ function addRow(name, price, stock) {
   action_cell.append(action_buttons)
 
   row.append(name_cell, price_cell, stock_cell, action_cell)
+  // FIX: data-id is for html, it's dataset.id in js.
+  row.dataset.id = id
 
   $('.inventory_table').append(row)
+}
+
+$('.inventory_table').onclick = (event) => {
+  // event = click
+  // target = the element that was clicked
+  // closest = the closest selector to that element
+  let btn = event.target.closest('button')
+  // This cancel the function if a button wasn't clicked, to stop an error.
+  if (!btn) return
+  // FIX: Its not data-id, that is the html attribute. The attribute read in 
+  // js is .dataset.id
+  let id = btn.closest('tr').dataset.id
+  let item = items[id]
+
+  if (btn.matches('.read.btn')) {
+    // FIX: Forgot the class selector prefix '.' required for querySelector.
+    $('.name_span').textContent = item.name
+    $('.price_span').textContent = item.price
+    $('.stock_span').textContent = item.stock
+  }
 }

@@ -141,3 +141,13 @@
   background-color: #EEEEEE;
 }
 
+.item_display {
+  display: grid;
+  /* FIX: I put a comma between the track sizes by mistake */
+  grid-template-columns: max-content max-content;
+}
+
+.item_display span {
+  font-family: verdana, sans-serif;
+  font-size: 11px;
+}
