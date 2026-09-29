@@ -102,6 +102,17 @@
   background-color: hsl(184, 9%, 56%);
 }
 
+.save {
+  background-color: hsl(32, 100%, 66%);
+  display: none;
+}
+.save:hover {
+  background-color: hsl(32, 100%, 71%);
+}
+.save:active {
+  background-color: hsl(32, 100%, 61%);
+}
+
 .action_buttons {
   display: flex;
   padding: 1px 0px;
@@ -145,9 +156,27 @@
   display: grid;
   /* FIX: I put a comma between the track sizes by mistake */
   grid-template-columns: max-content max-content;
+  border: 1px solid black;
+  box-shadow: 0px 0px 2px 0.5px hsla(0, 0%, 0%, 0.3);
+  width: max-content;
+  padding: 3px;
+  border-radius: 3px;
+  background-color: #f5eedd;
+  column-gap: 3px;
 }
 
 .item_display span {
   font-family: verdana, sans-serif;
   font-size: 11px;
+}
+
+.item_display span:nth-child(odd) {
+  font-weight: bold;
+  line-height: 1.0;
+}
+
+.item_display span:nth-child(even) {
+  color: #3f95c0;
+  font-style: italic;
+  font-family: monospace;
 }

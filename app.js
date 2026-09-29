@@ -14,6 +14,10 @@ $('.create.btn').onclick = () => {
 
 
 $('.clear.btn').onclick = () => {
+  clearForm()
+}
+
+function clearForm() {
   // reset() is a built-in method that restories form fields to their 
   // initial/default values.
   $('.inventory_form').reset()
@@ -65,6 +69,24 @@ function addRow(name, price, stock) {
   row.dataset.id = id
 
   $('.inventory_table').append(row)
+  clearForm()
+}
+
+$('.save.btn').onclick = () => {
+  let id = $('.save.btn').dataset.id
+
+  items[id].name = $('.name_input').value
+  items[id].price = $('.price_input').value
+  items[id].stock = $('.stock_input').value
+
+  let tr = $(`.inventory_table tr[data-id="${id}"`)
+  tr.children[0].textContent = items[id].name
+  tr.children[1].textContent = items[id].price
+  tr.children[2].textContent = items[id].stock
+
+  clearForm()
+  $('.save.btn').style.display = 'none'
+  $('.create.btn').style.display = 'inline'
 }
 
 $('.inventory_table').onclick = (event) => {
@@ -84,5 +106,18 @@ $('.inventory_table').onclick = (event) => {
     $('.name_span').textContent = item.name
     $('.price_span').textContent = item.price
     $('.stock_span').textContent = item.stock
+  }
+
+  if (btn.matches('.update.btn')) {
+    $('.name_input').value = item.name
+    $('.price_input').value = item.price
+    $('.stock_input').value = item.stock
+    $('.save.btn').style.display = 'inline'
+    // I was blanking on how to get the id to the form. Just save it as a
+    // data attribute.
+    $('.save.btn').dataset.id = id
+    $('.create.btn').style.display = 'none'
+    
+    saveItem(id)
   }
 }
