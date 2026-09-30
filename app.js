@@ -120,4 +120,11 @@ $('.inventory_table').onclick = (event) => {
     
     saveItem(id)
   }
+
+  if (btn.matches('.delete.btn')) {
+    delete items[id]
+    // FIX: Forgot to include quotes in [data-id="*"].
+    // FIX: Forgot to include parens on the remove method.
+    $(`.inventory_table tr[data-id="${id}"`).remove()
+  }
 }
